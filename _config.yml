@@ -8,6 +8,6 @@ github_username: filintech
 
 # Build settings
 markdown: kramdown
-theme: minima
+theme: samarsault/texture
 plugins:
   - jekyll-feed
