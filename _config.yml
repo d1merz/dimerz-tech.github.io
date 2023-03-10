@@ -11,3 +11,11 @@ markdown: kramdown
 remote_theme: samarsault/texture
 plugins:
   - jekyll-feed
+
+texture:
+  title: Очередной АйТи блог
+  tagline: If you can't explain it simply, you don't understand it well enough.
+  date_format: "%b %-d, %Y"
+
+  social_links:
+    github: filintech
