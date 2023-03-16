@@ -5,7 +5,6 @@ permalink: /leetcode/
 ---
 
 <div id="archives">
-{% for category in site.categories %}
   <div class="archive-group">
     
     {% for post in site.categories["leetcode"] %}
@@ -14,5 +13,4 @@ permalink: /leetcode/
     </article>
     {% endfor %}
   </div>
-{% endfor %}
 </div>
