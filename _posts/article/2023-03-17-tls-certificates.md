@@ -24,25 +24,45 @@ categories: article
 .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
   font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
 .tg .tg-d52n{background-color:#32cb00;border-color:inherit;text-align:left;vertical-align:top}
-.tg .tg-s3wk{background-color:#c0c0c0;border-color:inherit;color:#333333;text-align:left;vertical-align:top}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+.tg .tg-ut5e{background-color:#c0c0c0;border-color:inherit;color:#333333;text-align:center;vertical-align:top}
 .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
 </style>
 <table class="tg">
 <thead>
   <tr>
-    <th class="tg-s3wk">Симметричное</th>
-    <th class="tg-s3wk">Асимметричное</th>
+    <th class="tg-0lax"></th>
+    <th class="tg-ut5e">Симметричное</th>
+    <th class="tg-ut5e">Асимметричное</th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td class="tg-d52n">Быстро</td>
-    <td class="tg-0pky">Медленно</td>
+    <td class="tg-0lax">Скорость, нагрузка на CPU</td>
+    <td class="tg-d52n">Быстро (короткий ключ)</td>
+    <td class="tg-0pky">Медленно (длинный ключ)</td>
   </tr>
   <tr>
-    <td class="tg-0pky">Небезопасно</td>
-    <td class="tg-d52n">Безопасно</td>
+    <td class="tg-0lax"> Секьюрность</td>
+    <td class="tg-0pky">Небезопасно (нужно обмениваться общим ключом)</td>
+    <td class="tg-d52n">Безопасно (обмен происходит только открытым ключом)</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Алгоритмы</td>
+    <td class="tg-0lax">DES, RC4, 3DES, AES, ChaCha20</td>
+    <td class="tg-0lax">DSA, RSA, Diffie-Helman, ECDSA, ECDH</td>
   </tr>
 </tbody>
 </table>
 
+Как видно, кажется, что универсального решения нет, но на самом деле есть. И называется оно гибридным шифрованием. Это когда мы генерируем общий (быстрый) ключ, а передаем его секьюрно
+с помощью закрытого и открытого ключа. Получается, что общий ключ не подвержен перехвату (грубо), а последующее шифрование им данных происходит быстро.
+
+На самом деле, я написал в скобках грубо, так как всем известна проблема отсутствия аутентификации при таком подходе. Такое может произойти, если злоумышленник узнает о планах Боба и Алисы
+пообщаться и напишет Алисе первым, представившись Бобом. Тогда Алиса передаст ему свой открытый ключ, и у них начнется обмен сообщениями :hand_over_mouth:.
+Для этого Алиса должна как то понимать, что пишет ей именно Боб. Для этого была придумана электронная цифровая подпись.
+
+## ЭЦП
+
+Электронная подпись появилась благодаря внезапному свойству ассиметричных ключей быть симметричными :clown_face:. То есть то, <ins> что шифрует открытый ключ, может быть расшифровано закрытым, 
+а то что шифрует закрытый ключ может быть расшифровано открытым </ins>. 
