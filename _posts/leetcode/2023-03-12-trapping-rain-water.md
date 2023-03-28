@@ -64,4 +64,4 @@ def find_r_max(h):
     return r_max
 ```
 
-На этом, все мы решили очередную `Hard` задачку в несколько строчек :slightly_smiling_face:
+На этом все, мы решили очередную `Hard` задачку в несколько строчек :slightly_smiling_face:
