@@ -2,7 +2,7 @@
 layout: post
 title: "Best time to buy and sell stock"
 date: 2023-03-28 20:28:39 +0300
-categories: leetcode, dp   
+categories: [leetcode, dp]   
 ---
 
 Всем привет! Недавно решал серию интересных задач на динамику. Интересными мне эти задачи показались, 
