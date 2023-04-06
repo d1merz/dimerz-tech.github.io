@@ -2,7 +2,7 @@
 layout: post
 title: "Trapping Rain Water"
 date: 2023-03-13 20:28:39 +0300
-categories: leetcode
+categories: [leetcode, dp]
 ---
 
 [Условие](https://leetcode.com/problems/trapping-rain-water/)
