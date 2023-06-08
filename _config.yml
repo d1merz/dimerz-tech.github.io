@@ -1,10 +1,10 @@
-remote_theme: filintech/reverie
+remote_theme: dimerz-tech/reverie
 
 # Name of your site (displayed in the header)
 name: Очередной АйТи блог
 
 # Name of the author
-github_username: filintech
+github_username: dimerz-tech
 
 # Short bio or description (displayed in the header)
 description: If you can't explain it simply, you don't understand it well enough.
@@ -20,7 +20,7 @@ favicon: /images/favicon.png
 
 # Includes an icon in the footer for each username you enter
 footer-links:
-  github: filintech
+  github: dimerz-tech
 
 #
 # !! You don't need to change any of the configuration flags below !!
