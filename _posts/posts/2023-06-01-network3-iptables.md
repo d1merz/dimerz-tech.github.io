@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Сети ч.2. Интерфейсы, NAT, iptables, port-forwarding"
+title: "Сети ч.3. Интерфейсы, NAT, iptables, port-forwarding"
 date: 2023-06-01 20:28:39 +0300
 categories: [network, posts, iptables, linux]
 ---
