@@ -66,7 +66,7 @@ Netfilter это утилита из ядра Linux, которая позвол
 к приложению на нашем хосте (скажем Nginx), значит она пойдет по цепочкам **PREROUTING -> INPUT**. А ответ от этого приложения пойдет по цепочкам **OUTPUT -> POSTROUTING**.
 А еще можно в этих цепочках применить таблицы и поменять пакет. Это все.
 
-Ну и не могу не поделиться вот этим [шедевром](https://www.youtube.com/watch?v=tKRtJYfnv6g), тем, кто хочет понять все досконально к просмотру обязательно!
+Хочу поделиться вот этим [гайдом](https://www.youtube.com/watch?v=tKRtJYfnv6g), тем, кто хочет понять все досконально к просмотру обязательно!
 
 ## iptables
 Теперь рассмотрим как нам настраивать данные правила. В самом простом варианте вызов iptables выглядит так:
@@ -156,4 +156,4 @@ iptables -t nat -A POSTROUTING -p tcp -d 192.168.0.3 --dport 80 -j MASQUERADE
 
 ## Summary
 1. [Настройка iptables](https://www.youtube.com/watch?v=Q0EC8kJlB64)
-2. [Настройка NAT + Port Forwarding](https://www.youtube.com/watch?v=u_a3ouarrVU&t=1297s
+2. [Настройка NAT + Port Forwarding](https://www.youtube.com/watch?v=u_a3ouarrVU&t=1297s)
