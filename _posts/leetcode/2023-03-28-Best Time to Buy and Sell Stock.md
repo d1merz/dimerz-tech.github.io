@@ -5,8 +5,8 @@ date: 2023-03-28 20:28:39 +0300
 categories: [leetcode, dp]   
 ---
 
-Всем привет! Недавно решал серию интересных задач на динамику. Интересными мне эти задачи показались, 
-так как решение очередной задачи вытекает из предыдущей, а самая последняя (и сложная) объединяет в себе 3 предыдущих и решается в одну строчку :slightly_smiling_face:.
+![pic](../../images/leetcode/stocks/maxresdefault.jpg)
+Очень классная серия задач на динамическое программирование.
 
 # Best time to buy and sell stock 1
 [Условие](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)

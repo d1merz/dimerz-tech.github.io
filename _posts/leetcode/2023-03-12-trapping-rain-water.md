@@ -2,9 +2,10 @@
 layout: post
 title: "Trapping Rain Water"
 date: 2023-03-13 20:28:39 +0300
-categories: [leetcode, dp]
+categories: [leetcode, dp, hard]
 ---
 
+![pic](../../images/leetcode/trapping_rain_water/image.png)
 [Условие](https://leetcode.com/problems/trapping-rain-water/)
 
 Прежде чем решать задачу, я смотрю на ее ограничения (`constraints`). В данном случае самым важным из них является ограничение на количество столбиков воды $$1<=n<=2*10^4$$. 
@@ -63,5 +64,3 @@ def find_r_max(h):
         r_max[i] = h[r_max_index]
     return r_max
 ```
-
-На этом все, мы решили очередную `Hard` задачку в несколько строчек :slightly_smiling_face:
