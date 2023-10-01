@@ -1,44 +1,13 @@
 ---
 layout: post
-title: "Сети ч.3. Интерфейсы, NAT, iptables, port-forwarding"
+title: "NAT, iptables, port-forwarding"
 date: 2023-06-01 20:28:39 +0300
 categories: [network, posts, iptables, linux]
 ---
-Сегодня поговорим про более практические применения сетевых технологий в линуксе, но для начала вкратце про интерфейсы.
+Небольшой конспект из разных источников
+![netfilter](../../images/posts/network/Netfilter-logo.png)
 
-# Сетевые интерфейсы
-Интерфейс - это начальная точка входа сетевого пакета, дальше это устройство передает данные в оперативную память
-и оттуда уже к пользовательскому приложению. В одном компьютере может быть несколько интерфейсов 
-(VPN-туннель, Wi-Fi адаптер и проводной ethernet), и с точки зрения сетевых взаимодействий их можно рассматривать как отдельные сетевые элементы.
-Интерфейсы могут быть физическими и виртуальными. Виртуальные обычно применяются для эмуляции или создания виртуальных сетей. Поговорим об этом подробнее
-в разделе VPN. Список интерфейсов можно посмотреть командой:
-```bash
-ip a
-1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
-    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-    inet 127.0.0.1/8 scope host lo
-       valid_lft forever preferred_lft forever
-    inet6 ::1/128 scope host 
-       valid_lft forever preferred_lft forever
-2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
-    link/ether 00:15:5d:0d:2c:4f brd ff:ff:ff:ff:ff:ff
-    inet 193.124.117.195/24 scope global eth0
-       valid_lft forever preferred_lft forever
-    inet6 fe80::215:5dff:fe0d:2c4f/64 scope link 
-       valid_lft forever preferred_lft forever
-3: eth1: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq state DOWN group default qlen 1000
-    link/ether 00:15:5d:0d:2c:51 brd ff:ff:ff:ff:ff:ff
-    inet 192.168.0.2/24 scope global eth1
-       valid_lft forever preferred_lft forever
-```
-Основное, что тут нужно сказать, что у каждого интерфейса есть какой либо адрес, и подсесть к которому он относится. 
-Так же интерфейс может быть либо активным (UP) либо выключенным (DOWN). В каждом устройстве
-из коробки также есть loopback (lo) интерфейс. Как правило, ему принадлежит известный `localhost` и адрес `127.0.0.1`. Это как раз пример виртуальной
-эмуляции сетевого интерфейса. Обычно он используется, для того чтобы проверить доступность сетевых приложений, не разворачивая при этом реальную сеть
-(когда вы поднимаете nginx или базу данных локально).
 # Netfilter (aka Linux firewall)
-Netfilter это утилита из ядра Linux, которая позволяет разрешать/запрещать/изменять пакеты, которые либо мы получили, либо отправили.
-Так как это модуль ядра, у него есть популярный фронтенд, через который мы с вами можем с этим модулем взаимодействовать - инструмент iptables.
 Далее мы на практике рассмотрим несколько самых популярных правил, а пока я приведу схему (на мой взгляд самую понятную из всех, что я видел) работы netfilter:
 ![alt text](https://cloud.githubusercontent.com/assets/1711674/8742363/87fad710-2c32-11e5-8896-7adf1a4cf164.png)
 А вот [тут](https://www.youtube.com/watch?v=Q0EC8kJlB64) самое классное видео по настройке.
