@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Concurrency на примере Rust Tokio"
-date: 2023-10-03 20:28:39 +0300
+date: 2023-09-03 20:28:39 +0300
 categories: [posts, linux, rust]
 ---
 
