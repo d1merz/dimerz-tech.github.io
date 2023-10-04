@@ -70,10 +70,10 @@ categories: [posts, linux, rust]
   только с неблокирующими сокетами, чтобы сразу же вернуть состояние.
 
 ## Async/await на примере Tokio
+Скоро будет...
 
 
 ## Полезные ссылки
 * [Про Nginx](https://www.nginx.com/blog/tuning-nginx/)
 * [Apache vs Nginx](https://gohost.kz/blog/hosting/chto-luchshe-nginx-vs-apache/)
 * [Очень хорошо про epoll](https://habr.com/ru/articles/416669/)
-* [Про Multiplexing](https://eklitzke.org/blocking-io-nonblocking-io-and-epoll)
