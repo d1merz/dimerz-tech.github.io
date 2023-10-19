@@ -7,7 +7,7 @@ categories: [posts, linux, rust]
 
 ![concurrency](../../images/posts/concurrency/epoll.png)
 
-**Table of content:**
+**Содержание:**
 - [Проблема](#i1)
 - [Инструменты и ресурсы для решения](#i2)
 - [Concurrency vs Multithreading](#i3)
